@@ -2,7 +2,8 @@
 
 :root {
   --background-color: #212121;
-  --section-color: #424242;
+  --section-color: #292929;
+  --card-color: #333333;
 
   --text-color: #fafafa;
   --highlight-color: #ff9800;
@@ -15,11 +16,12 @@
   --spacing-xl: 40px;
 
   --border-radius-base: 4px;
+  --border-radius-md: 8px;
 
-  --font-size-small: 12px;
-  --font-size-normal: 16px;
-  --font-size-title: 24px;
-  --font-size-title-large: 28px;
+  --font-size-base: 12px;
+  --font-size-sm: 16px;
+  --font-size-md: 24px;
+  --font-size-lg: 28px;
 }
 
 * {
@@ -28,7 +30,8 @@
   padding: 0;
   font-family: "Be Vietnam Pro", sans-serif;
   color: var(--text-color);
-  font-size: var(--font-size-normal);
+  font-size: var(--font-size-sm);
+  line-height: 24px;
 }
 
 html,
@@ -38,17 +41,22 @@ body {
 }
 
 h3 {
-  font-size: var(--font-size-title);
+  font-size: var(--font-size-md);
   line-height: 28px;
 }
 
 h4 {
-  font-size: var(--font-size-title-large);
+  font-size: var(--font-size-lg);
   line-height: 32px;
 }
 
+h5 {
+  font-size: var(--font-size-md);
+  line-height: 28px;
+}
+
 main {
-  max-width: 780px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -66,7 +74,7 @@ main {
 }
 
 .highlighteds .item {
-  width: 110px;
+  width: 152px;
   display: flex;
   flex-direction: column;
 }
@@ -76,8 +84,8 @@ main {
 }
 
 .highlighteds .item > img {
-  width: 110px;
-  height: 172px;
+  width: 152px;
+  height: 240px;
   object-fit: cover;
   border-radius: var(--border-radius-base);
   border: 2px solid var(--highlight-color);
@@ -86,6 +94,68 @@ main {
 .highlighteds .item > span {
   max-width: 100%;
   height: 40px;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
   margin-top: var(--spacing-sm);
+}
+
+.recent-chapters-list {
+  margin: var(--spacing-lg) 0;
+}
+
+.recent-chapters-list .item-chapters {
+  background-color: var(--card-color);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-base);
+
+  display: flex;
+}
+
+.recent-chapters-list .item-chapters:not(:last-of-type) {
+  margin-bottom: var(--spacing-sm);
+}
+
+.recent-chapters-list .item-chapters > img {
+  width: 96px;
+  height: 148px;
+  object-fit: cover;
+  margin-right: var(--spacing-md);
+  border-radius: var(--border-radius-base);
+  border: 2px solid var(--highlight-color);
+}
+
+.recent-chapters-list .item-chapters .content-item-chapters {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-chapters-list .item-chapters .content-item-chapters > h5 {
+  margin-bottom: var(--spacing-base);
+}
+
+.recent-chapters-list .item-chapters .content-item-chapters > p {
+  height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-chapters-list .item-chapters .content-item-chapters > div {
+  margin-top: auto;
+  display: flex;
+}
+
+.recent-chapters-list .item-chapters .content-item-chapters .chapter-number {
+  background-color: var(--highlight-color);
+  padding: var(--spacing-base) var(--spacing-sm);
+  border-end-end-radius: var(--border-radius-md);
+  border-top-left-radius: var(--border-radius-md);
+}
+
+.recent-chapters-list
+  .item-chapters
+  .content-item-chapters
+  .chapter-number:not(:last-of-type) {
+  margin-right: var(--spacing-sm);
 }
